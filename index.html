@@ -1,204 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kinship AI</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8fafc;
-      color: #111827;
-      line-height: 1.6;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinship AI</title>
 
-    .wrap {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 24px;
-    }
+<style>
 
-    .hero {
-      padding: 80px 24px 50px;
-      text-align: center;
-    }
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+background:#f8fafc;
+color:#111827;
+line-height:1.6;
+}
 
-    .hero h1 {
-      font-size: 52px;
-      margin-bottom: 12px;
-    }
+.container{
+max-width:1000px;
+margin:auto;
+padding:24px;
+}
 
-    .hero .tagline {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 18px;
-    }
+.hero{
+text-align:center;
+padding:90px 20px 60px;
+}
 
-    .hero .subtext {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 18px;
-      color: #4b5563;
-    }
+.hero h1{
+font-size:52px;
+margin-bottom:10px;
+}
 
-    .section {
-      padding: 28px 0;
-    }
+.tagline{
+font-size:26px;
+font-weight:600;
+margin-bottom:16px;
+}
 
-    .section h2 {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
+.subtitle{
+font-size:18px;
+max-width:720px;
+margin:auto;
+color:#4b5563;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-      margin-top: 20px;
-    }
+.section{
+padding:50px 0;
+}
 
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    }
+.section h2{
+font-size:32px;
+margin-bottom:14px;
+}
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:20px;
+}
 
-    .highlight {
-      background: white;
-      border-radius: 14px;
-      padding: 24px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    }
+.card{
+background:white;
+padding:24px;
+border-radius:14px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+}
 
-    ul {
-      padding-left: 20px;
-    }
+.highlight{
+background:white;
+padding:26px;
+border-radius:14px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+}
 
-    .footer {
-      text-align: center;
-      padding: 50px 24px 70px;
-      color: #4b5563;
-    }
+ul{
+padding-left:20px;
+}
 
-    a {
-      color: #111827;
-    }
+.cta{
+background:#111827;
+color:white;
+text-align:center;
+padding:50px 30px;
+border-radius:16px;
+}
 
-    .contact-link {
-      font-weight: bold;
-      text-decoration: none;
-    }
+.cta h2{
+margin-top:0;
+}
 
-    .contact-link:hover {
-      text-decoration: underline;
-    }
-  </style>
+.cta input{
+padding:12px;
+width:250px;
+border:none;
+border-radius:8px;
+margin-right:10px;
+}
+
+.cta button{
+padding:12px 18px;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+.cta button:hover{
+background:#1e40af;
+}
+
+.founder{
+background:white;
+padding:28px;
+border-radius:14px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+}
+
+.footer{
+text-align:center;
+padding:60px 20px;
+color:#6b7280;
+}
+
+a{
+color:#2563eb;
+text-decoration:none;
+}
+
+</style>
+
 </head>
+
 <body>
-  <section class="hero">
-    <div class="wrap">
-      <h1>Kinship AI</h1>
-      <div class="tagline">Discover the people you're meant to meet.</div>
-      <p class="subtext">
-        KinshipAI is an early-stage concept exploring how artificial intelligence
-        can help like-minded people find one another for friendship, collaboration,
-        mentorship, community, and meaningful relationships of all kinds.
-      </p>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="highlight">
-        <h2>Why KinshipAI?</h2>
-        <p>
-          Most platforms today rely on quick impressions, basic profile tags,
-          and swipe-based decisions. KinshipAI explores a different path:
-          allowing AI to understand people gradually over time through conversation,
-          interests, communication style, and evolving perspectives.
-        </p>
-        <p>
-          The goal is not simply to connect people quickly, but to connect them
-          more meaningfully.
-        </p>
-      </div>
-    </div>
-  </section>
+<section class="hero container">
 
-  <section class="section">
-    <div class="wrap">
-      <h2>How It Could Work</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Learn</h3>
-          <p>
-            KinshipAI gradually learns about individuals through dialogue,
-            interests, and patterns in communication.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Understand</h3>
-          <p>
-            Over time, AI begins recognizing deeper alignment in ideas, goals,
-            values, and perspective.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Connect</h3>
-          <p>
-            When meaningful compatibility appears, KinshipAI can introduce
-            people who may genuinely benefit from knowing one another.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+<h1>Kinship AI</h1>
 
-  <section class="section">
-    <div class="wrap">
-      <h2>What KinshipAI Could Support</h2>
-      <ul>
-        <li>Friendships and shared interests</li>
-        <li>Creative collaborations and projects</li>
-        <li>Mentorship and learning communities</li>
-        <li>Professional partnerships and innovation</li>
-        <li>Hobby and curiosity-based communities</li>
-        <li>Supportive peer connections</li>
-        <li>Romantic relationships, where natural</li>
-      </ul>
-    </div>
-  </section>
+<div class="tagline">
+Discover the people you're meant to meet.
+</div>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="highlight">
-        <h2>Founder Vision</h2>
-        <p>
-          KinshipAI began with the idea that many important human relationships
-          happen by chance, and that technology may be able to help people find
-          one another more intentionally.
-        </p>
-        <p>
-          By moving beyond surface-level matching, KinshipAI explores whether AI
-          can help create stronger and more meaningful human connection.
-        </p>
-      </div>
-    </div>
-  </section>
+<p class="subtitle">
+KinshipAI explores how artificial intelligence could help like-minded
+people discover one another for collaboration, community, friendship,
+learning, and meaningful relationships of all kinds.
+</p>
 
-  <footer class="footer">
-    <p><strong>Founded by Angie Chappus</strong></p>
-    <p>
-      Contact:
-      <a class="contact-link" href="mailto:contact@kinshipai.ca">contact@kinshipai.ca</a>
-    </p>
-  </footer>
+</section>
+
+
+<section class="section container">
+
+<div class="highlight">
+
+<h2>Why KinshipAI?</h2>
+
+<p>
+Most modern platforms rely on quick impressions and swipe-based decisions.
+They match people using a handful of profile tags or questions.
+</p>
+
+<p>
+KinshipAI explores a different idea — allowing AI to learn about people
+over time through conversation, interests, communication styles,
+and evolving perspectives.
+</p>
+
+<p>
+Instead of instant matches, the goal is to introduce people when
+genuine compatibility begins to emerge.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="section container">
+
+<h2>How KinshipAI Could Work</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Learn</h3>
+<p>
+KinshipAI gradually learns about individuals through conversation,
+interests, and communication patterns.
+</p>
+</div>
+
+<div class="card">
+<h3>Understand</h3>
+<p>
+Over time, AI begins recognizing deeper alignment in ideas,
+values, goals, and perspective.
+</p>
+</div>
+
+<div class="card">
+<h3>Connect</h3>
+<p>
+When meaningful compatibility appears, KinshipAI introduces
+people who may genuinely benefit from knowing one another.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section container">
+
+<h2>What KinshipAI Could Support</h2>
+
+<ul>
+<li>Friendships and shared interests</li>
+<li>Creative collaborations and projects</li>
+<li>Mentorship and learning communities</li>
+<li>Professional partnerships and innovation</li>
+<li>Hobby and curiosity-based communities</li>
+<li>Supportive peer connections</li>
+<li>Romantic relationships, where natural</li>
+</ul>
+
+</section>
+
+
+<section class="section container">
+
+<div class="cta">
+
+<h2>Join Early Access</h2>
+
+<p>
+KinshipAI is currently in the concept and exploration stage.
+Join the early interest list to follow development and future testing.
+</p>
+
+<input type="email" placeholder="Enter your email">
+
+<button>Join</button>
+
+</div>
+
+</section>
+
+
+<section class="section container">
+
+<div class="founder">
+
+<h2>Founder</h2>
+
+<p><strong>Angie Chappus</strong></p>
+
+<p>
+KinshipAI began with a simple idea: many important relationships
+in life happen by chance. This project explores whether artificial
+intelligence could help people discover meaningful connections
+more intentionally.
+</p>
+
+</div>
+
+</section>
+
+
+<footer class="footer">
+
+<p>KinshipAI is an early-stage concept.</p>
+
+<p>
+Contact:
+<a href="mailto:contact@kinshipai.ca">
+contact@kinshipai.ca
+</a>
+</p>
+
+</footer>
+
 </body>
 </html>
