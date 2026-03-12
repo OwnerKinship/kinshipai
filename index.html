@@ -80,6 +80,24 @@ animation:northPulse 4s ease-in-out infinite;
 pointer-events:none;
 }
 
+.north-star::after{
+content:"";
+position:absolute;
+inset:-30px;
+border-radius:50%;
+background:radial-gradient(circle, rgba(141,198,255,0.25), rgba(141,198,255,0.08) 40%, transparent 70%);
+filter:blur(4px);
+animation:northHalo 6s ease-in-out infinite;
+}
+
+@keyframes northHalo{
+0%{opacity:.35;transform:scale(.9)}
+50%{opacity:.7;transform:scale(1.2)}
+100%{opacity:.35;transform:scale(.9)}
+}
+pointer-events:none;
+}
+
 @keyframes northPulse{
 0%{transform:scale(1);opacity:.8}
 50%{transform:scale(1.6);opacity:1}
@@ -317,7 +335,7 @@ A calmer digital environment where people can feel welcomed rather than overwhel
 </div>
 
 <div class="feature">
-<strong>Early-stage concept</strong>
+<strong>Early‑stage concept</strong>
 Feedback from early visitors will help shape what KinshipAI becomes.
 </div>
 
@@ -425,6 +443,18 @@ The goal isn't to create another noisy platform. It's to create a place where th
 
 <div class="north-star"></div>
 
+<script>
+// subtle parallax for North Star
+window.addEventListener('scroll', function(){
+  const star = document.querySelector('.north-star');
+  if(!star) return;
+  const y = window.scrollY * 0.05;
+  const x = window.scrollY * 0.02;
+  star.style.transform = `translate(${x}px, ${y}px)`;
+});
+</script>
+
 </body>
 </html>
+
 
