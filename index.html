@@ -45,7 +45,25 @@ radial-gradient(2px 2px at 70% 15%,white,transparent),
 radial-gradient(1.5px 1.5px at 60% 50%,white,transparent),
 radial-gradient(2px 2px at 80% 70%,white,transparent),
 radial-gradient(1.5px 1.5px at 20% 75%,white,transparent);
-opacity:.6;
+opacity:.65;
+}
+
+body::after{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cg stroke='%238dc6ff' stroke-opacity='0.25' stroke-width='1.5' fill='none'%3E%3Cpath d='M80 120 L210 80 L360 130 L520 90 L690 150'/%3E%3Cpath d='M120 360 L260 320 L420 370 L600 330 L720 390'/%3E%3C/g%3E%3C/svg%3E");
+background-size:900px 700px;
+background-repeat:no-repeat;
+background-position:center;
+opacity:.45;
+animation:constellationDrift 40s linear infinite;
+}
+
+@keyframes constellationDrift{
+from{transform:translateY(0px)}
+to{transform:translateY(-40px)}
 }
 
 .container{
@@ -385,4 +403,3 @@ The goal isn't to create another noisy platform. It's to create a place where th
 
 </body>
 </html>
-
