@@ -66,6 +66,28 @@ from{transform:translateY(0px)}
 to{transform:translateY(-40px)}
 }
 
+/* North Star */
+.north-star{
+position:fixed;
+top:18%;
+left:52%;
+width:10px;
+height:10px;
+border-radius:50%;
+background:white;
+box-shadow:0 0 8px rgba(255,255,255,.9),0 0 25px rgba(141,198,255,.8);
+animation:northPulse 4s ease-in-out infinite;
+pointer-events:none;
+}
+
+@keyframes northPulse{
+0%{transform:scale(1);opacity:.8}
+50%{transform:scale(1.6);opacity:1}
+100%{transform:scale(1);opacity:.8}
+}
+to{transform:translateY(-40px)}
+}
+
 .container{
 width:min(1100px,92%);
 margin:auto;
@@ -401,5 +423,8 @@ The goal isn't to create another noisy platform. It's to create a place where th
 
 </div>
 
+<div class="north-star"></div>
+
 </body>
 </html>
+
