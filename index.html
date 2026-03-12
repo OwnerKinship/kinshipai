@@ -1,27 +1,310 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KinshipAI</title>
+<meta name="description" content="KinshipAI is an early concept exploring meaningful human connection online." />
+
 <style>
+:root{
+--bg:#060b16;
+--bg-soft:#0d1a2e;
+--panel:rgba(255,255,255,0.07);
+--border:rgba(255,255,255,0.14);
+--text:#eef4ff;
+--muted:#b9c7df;
+--accent:#8dc6ff;
+--accent2:#d9b8ff;
+--shadow:0 20px 60px rgba(0,0,0,0.45);
+}
+
+*{box-sizing:border-box}
+
 body{
-background:#020412;
-color:white;
-font-family:Arial;
+margin:0;
+font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+color:var(--text);
+background:
+radial-gradient(circle at top,rgba(141,198,255,0.15),transparent 40%),
+radial-gradient(circle at 80% 20%,rgba(217,184,255,0.18),transparent 35%),
+linear-gradient(180deg,#040914 0%,#081224 60%,#07111f 100%);
+min-height:100vh;
+}
+
+/* stars */
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+background-image:
+radial-gradient(2px 2px at 10% 20%,white,transparent),
+radial-gradient(1.5px 1.5px at 30% 40%,white,transparent),
+radial-gradient(2px 2px at 70% 15%,white,transparent),
+radial-gradient(1.5px 1.5px at 60% 50%,white,transparent),
+radial-gradient(2px 2px at 80% 70%,white,transparent),
+radial-gradient(1.5px 1.5px at 20% 75%,white,transparent);
+opacity:.6;
+}
+
+.container{
+width:min(1100px,92%);
+margin:auto;
+padding:60px 0 80px;
+}
+
+.hero{
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:30px;
+align-items:center;
+}
+
+.badge{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:10px 14px;
+border-radius:999px;
+background:rgba(255,255,255,0.08);
+border:1px solid var(--border);
+font-size:.9rem;
+color:var(--muted);
+}
+
+.dot{
+width:8px;height:8px;border-radius:50%;
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+box-shadow:0 0 15px var(--accent);
+}
+
+h1{
+margin:18px 0;
+font-size:clamp(2.8rem,6vw,5rem);
+letter-spacing:-.04em;
+}
+
+.lead{
+color:var(--muted);
+line-height:1.7;
+font-size:1.1rem;
+max-width:60ch;
+}
+
+.actions{
+margin-top:26px;
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.button{
+padding:14px 20px;
+border-radius:16px;
+font-weight:600;
+border:1px solid transparent;
+transition:.2s;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+}
+
+.button:hover{transform:translateY(-2px)}
+
+.primary{
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+color:#06101c;
+box-shadow:0 10px 30px rgba(140,180,255,.3);
+}
+
+.secondary{
+background:rgba(255,255,255,.06);
+border-color:var(--border);
+}
+
+.panel{
+background:var(--panel);
+border:1px solid var(--border);
+padding:26px;
+border-radius:26px;
+backdrop-filter:blur(12px);
+box-shadow:var(--shadow);
+}
+
+.section-title{
+font-size:.85rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:var(--muted);
+margin-bottom:14px;
+}
+
+.feature{
+padding:14px 16px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.04);
+margin-bottom:12px;
+}
+
+.feature strong{display:block;margin-bottom:5px}
+
+.constellation{
+margin-top:50px;
+padding:30px;
+border-radius:24px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.stars{
 display:flex;
 justify-content:center;
-align-items:center;
-height:100vh;
-text-align:center;
+gap:18px;
+margin-top:20px;
 }
+
+.star{
+width:6px;height:6px;border-radius:50%;
+background:white;
+box-shadow:0 0 12px rgba(255,255,255,.8);
+animation:twinkle 3s infinite alternate;
+}
+
+.star:nth-child(3){transform:scale(1.6)}
+
+@keyframes twinkle{
+from{opacity:.4}
+ to{opacity:1}
+}
+
+.founder{
+margin-top:18px;
+color:var(--muted);
+line-height:1.6;
+}
+
+.footer{
+margin-top:20px;
+font-size:.9rem;
+color:var(--muted);
+}
+
+@media(max-width:900px){
+.hero{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 
 <body>
 
+<div class="container">
+
+<section class="hero">
+
 <div>
+
+<div class="badge">
+<span class="dot"></span>
+Early concept · Exploring genuine connection
+</div>
+
 <h1>KinshipAI</h1>
-<p>Something new is being built.</p>
-<p>Check back soon.</p>
+
+<p class="lead">
+KinshipAI began from a simple question: what if the internet could help people feel genuinely understood again?
+
+KinshipAI is an early concept built around a simple idea: meaningful human connection should still feel possible online.
+
+Connection isn't limited to family. Kinship can exist between strangers who simply understand each other.
+
+This project is exploring a calmer, more intentional digital space for people seeking belonging, thoughtful conversation, and genuine human connection.
+</p>
+
+<div class="actions">
+<a class="button primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfzOx2nXv6pA4WzqANXAY7hXz8eEhYpehYbOapDFN1pIt2BIQ/viewform?usp=publish-editor" target="_blank">Join Early Access</a>
+
+<a class="button secondary" href="mailto:contact@kinshipai.ca">Contact Founder</a>
+</div>
+
+<p class="footer">Belonging is something we create.</p>
+
+</div>
+
+<div class="panel">
+
+<p class="section-title">What KinshipAI is exploring</p>
+
+<div class="feature">
+<strong>Genuine connection</strong>
+Spaces designed to encourage thoughtful conversation rather than endless scrolling.
+</div>
+
+<div class="feature">
+<strong>Belonging</strong>
+A calmer digital environment where people can feel welcomed rather than overwhelmed.
+</div>
+
+<div class="feature">
+<strong>Early‑stage concept</strong>
+Feedback from early visitors will help shape what KinshipAI becomes.
+</div>
+
+<div class="founder">
+<p class="section-title">Founder</p>
+KinshipAI is currently an early concept created by Angie Chappus. If you'd like to reach out with thoughts, feedback, or collaboration ideas, you're welcome to contact directly.
+
+<br><br>
+<a class="button secondary" href="mailto:contact@kinshipai.ca">contact@kinshipai.ca</a>
+</div>
+
+</div>
+
+</section>
+
+<section class="panel" style="margin-top:40px">
+
+<p class="section-title">How it works</p>
+
+<div class="feature">
+<strong>1. Join early access</strong>
+Add your email through the short form. This simply lets us know you're interested in the idea and want to follow its progress.
+</div>
+
+<div class="feature">
+<strong>2. Help shape the concept</strong>
+Early feedback from visitors will influence how KinshipAI evolves — from the type of spaces created to how people connect within them.
+</div>
+
+<div class="feature">
+<strong>3. Be part of the first constellation</strong>
+When development begins, early supporters will be the first invited into the platform to help form the initial community.
+</div>
+
+</section>
+
+<section class="constellation">
+
+<p class="section-title">The idea</p>
+
+<p class="lead" style="max-width:700px">
+KinshipAI imagines people like stars — individuals existing on their own, yet capable of forming constellations when the right connections appear.
+
+The goal isn't to create another noisy platform. It's to create a place where the right people can find each other.
+</p>
+
+<div class="stars">
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+</div>
+
+</section>
+
 </div>
 
 </body>
