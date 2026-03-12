@@ -45,7 +45,8 @@ radial-gradient(2px 2px at 70% 15%,white,transparent),
 radial-gradient(1.5px 1.5px at 60% 50%,white,transparent),
 radial-gradient(2px 2px at 80% 70%,white,transparent),
 radial-gradient(1.5px 1.5px at 20% 75%,white,transparent);
-opacity:.65;
+opacity:0;
+animation:starFieldFade 3s ease forwards 1.2s;
 }
 
 body::after{
@@ -59,6 +60,11 @@ background-repeat:no-repeat;
 background-position:center;
 opacity:.45;
 animation:constellationDrift 40s linear infinite;
+}
+
+@keyframes starFieldFade{
+0%{opacity:0}
+100%{opacity:.65}
 }
 
 @keyframes constellationDrift{
@@ -488,6 +494,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 </body>
 </html>
+
 
 
 
