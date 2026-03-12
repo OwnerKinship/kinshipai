@@ -163,6 +163,28 @@ display:flex;
 justify-content:center;
 gap:18px;
 margin-top:20px;
+position:relative;
+min-height:90px;
+align-items:center;
+}
+
+.constellation-lines{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+pointer-events:none;
+opacity:.7;
+}
+
+.constellation-lines path{
+stroke:rgba(141,198,255,.45);
+stroke-width:2;
+fill:none;
+stroke-linecap:round;
+stroke-dasharray:8 10;
+animation:drift 7s linear infinite;
+filter:drop-shadow(0 0 8px rgba(141,198,255,.18));
 }
 
 .star{
@@ -176,6 +198,13 @@ animation:twinkle 3s infinite alternate;
 
 @keyframes twinkle{
 from{opacity:.4}
+ to{opacity:1}
+}
+
+@keyframes drift{
+from{stroke-dashoffset:0}
+ to{stroke-dashoffset:-36}
+}
  to{opacity:1}
 }
 
@@ -301,6 +330,34 @@ KinshipAI is currently an early concept created by Angie Chappus. If you'd like 
 
 </section>
 
+<section class="panel" style="margin-top:28px">
+
+<p class="section-title">Why early access matters</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;align-items:stretch;">
+  <div class="feature" style="margin-bottom:0;min-height:100%;">
+    <strong>Early voices shape the direction</strong>
+    KinshipAI is still taking form. The people who join now help influence how connection, conversation, and community will be designed.
+  </div>
+
+  <div class="feature" style="margin-bottom:0;min-height:100%;">
+    <strong>Built with people, not just for them</strong>
+    This isn't about launching another platform and hoping people adapt. It's about listening early and building something people genuinely want to return to.
+  </div>
+
+  <div class="feature" style="margin-bottom:0;min-height:100%;border-color:rgba(141,198,255,0.28);box-shadow:0 0 0 1px rgba(141,198,255,0.08) inset;">
+    <strong>First constellation</strong>
+    Early supporters will become the first invited into the space as it evolves — the beginning of the community KinshipAI hopes to create.
+  </div>
+</div>
+
+<div class="feature" style="margin-top:16px;margin-bottom:0;">
+  <strong>Early interest</strong>
+  This concept is currently gathering early access signups and feedback from people who feel something important is missing from the way connection happens online.
+</div>
+
+</section>
+
 <section class="constellation">
 
 <p class="section-title">The idea</p>
@@ -312,6 +369,9 @@ The goal isn't to create another noisy platform. It's to create a place where th
 </p>
 
 <div class="stars">
+<svg class="constellation-lines" viewBox="0 0 600 90" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M78 48 L182 30 L300 50 L414 26 L522 42" />
+</svg>
 <div class="star"></div>
 <div class="star"></div>
 <div class="star"></div>
@@ -325,4 +385,3 @@ The goal isn't to create another noisy platform. It's to create a place where th
 
 </body>
 </html>
-
